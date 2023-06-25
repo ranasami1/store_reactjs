@@ -3,11 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import logo from "./../../img/pngwing.com (1).png";
 const Header=()=>{
     return(
         <Navbar expand="lg" className="bg-body-tertiary shadow">
       <Container>
-        <Navbar.Brand href="#home">Ecommerce</Navbar.Brand>
+        <Navbar.Brand href="#home"><img src={logo} style={{width:32}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">

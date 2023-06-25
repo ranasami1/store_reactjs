@@ -1,0 +1,46 @@
+.head{
+    width: 100%;
+    padding-top: 30px;
+    height: auto;
+}
+.head .container .row{
+    height: 550px;
+    display: flex;
+    justify-content: space-between;
+}
+.head .container .row img{
+    max-width: 95%;
+    animation: sale;
+    animation-timing-function:linear;
+    animation-duration: 15s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+    border-radius: 120%;
+    z-index: -9999;
+}
+@keyframes sale {
+    from{
+        transform: rotate(0deg);
+
+    }
+    to{
+        transform: rotate(360deg);
+
+    }
+    
+}
+.sec1{
+    padding-top: 50px;
+}
+.head2 .row{
+    width: 90%;
+    margin: auto;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.head2 .row h1{
+    padding: 20px;
+}
