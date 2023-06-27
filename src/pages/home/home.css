@@ -1,23 +1,24 @@
 .head{
     width: 100%;
-    padding-top: 30px;
     height: auto;
 }
 .head .container .row{
-    height: 550px;
+    max-height: 500px;
     display: flex;
     justify-content: space-between;
 }
 .head .container .row img{
-    max-width: 95%;
+    width:92%;
     animation: sale;
     animation-timing-function:linear;
     animation-duration: 15s;
     animation-delay: 0;
     animation-iteration-count: infinite;
     animation-direction:normal;
-    border-radius: 120%;
+    border-radius: 150%;
+    position: sticky;
     z-index: -9999;
+    margin-top: 50px;
 }
 @keyframes sale {
     from{
@@ -31,16 +32,20 @@
     
 }
 .sec1{
-    padding-top: 50px;
+    margin-top: 100px;
+   
+
+}
+.head2{
+    height: auto;
 }
 .head2 .row{
     width: 90%;
-    margin: auto;
-    height: 300px;
+    margin: 10px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .head2 .row h1{
-    padding: 20px;
+    padding: 10px;
 }

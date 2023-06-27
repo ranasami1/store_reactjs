@@ -1,0 +1,8 @@
+.span{
+    width: 10px;
+    height: auto;
+    background-color: #444;
+    border-radius: 150%;
+    color: #fff;
+    font-size: 18px;
+}

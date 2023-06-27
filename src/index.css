@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+}
+:root{
+    --main-color:#E6A900;
+}
+h1::first-letter{
+    font-weight: 700;
+    font-size: larger;
+    color: var(--main-color);
+}
