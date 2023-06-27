@@ -5,23 +5,46 @@ import "./products.css"
 import { Button } from "react-bootstrap";
 const Allproducts = () =>{
     const  [value,setValue] = useState([]);
+    const  [cat,setCat] = useState([]);
     const url ="https://fakestoreapi.com/products"
-    useEffect(() =>{
-        fetch(url)
-        .then((res)=>res.json())
-        .then((data)=>setValue(data));
-    }, []);
+
+    const getall = () => {
+    fetch(url)
+    .then((res)=>res.json())
+    .then((data)=>setValue(data));
+   }
+
+    const getcat = () => {
+    fetch(`${url}/categories`)
+    .then((res)=>res.json())
+    .then((data)=>setCat(data));
+   };
+
+   const filter = (catName) => {
+    console.log(catName);
+    fetch(`${url}/category/${catName}`)
+            .then((res)=>res.json())
+            .then((data)=>setValue(data));
+   };
+   useEffect(() =>{
+    getall();
+    getcat();
+   },[])
+
     return(
     <div className="container prod">
         <div className="row">
         <h1 className="text-center">Our Products</h1>
         <div className="filter">
             <p>Filter-_</p>
-        <Button id="filterb"variant="outline-secondary">all products</Button>
-        <Button id="filterb"variant="outline-secondary">Men</Button>
-        <Button id="filterb"variant="outline-secondary">Women</Button>
-        <Button id="filterb"variant="outline-secondary">Jewelery</Button>
-        <Button id="filterb"variant="outline-secondary">Electronics</Button></div>
+            {cat.map((categ)=>{
+                return(
+                    <Button key={cat.id} onClick={() => {filter(categ)
+                    }} id="filterb"variant="outline-secondary">{categ}</Button>
+
+                )
+            })}
+        </div>
         
                     {value.map((card) =>{
                         return(
