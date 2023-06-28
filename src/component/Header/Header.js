@@ -18,7 +18,7 @@ const Header=()=>{
           <Nav className="ms-auto">
             <Link className="link" to="/" href="#home">Home</Link>
             <Link className="link" to="/products" href="#link">products</Link>
-            <Link className="link" to="/products" href="#link">Cart</Link>
+            <Link className="link" to="/cart" href="#link">Cart</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

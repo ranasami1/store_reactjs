@@ -3,6 +3,7 @@ import ph from './../../img/20419.jpg';
 import "./home.css"
 import { Button} from "react-bootstrap";
 import PCard from "../../component/cardC/card";
+import { Link } from "react-router-dom";
 const Head = ()=>{
     const  [value,setValue] = useState([]);
     const url ="https://fakestoreapi.com/products?limit=4"
@@ -20,7 +21,7 @@ const Head = ()=>{
                         <h2>welcome to our store</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a congue dui. Maecenas scelerisque porttitor sollicitudin. Vestibulum euismod eros vel lorem iaculis laoreet. Duis venenatis tincidunt sapien quis malesuada. Morbi vitae facilisis nisl. Ut ornare finibus quam, ac rutrum neque. Donec pharetra porttitor sollicitudin. Aliquam erat volutpat. Vestibulum vehicula vehicula odio in hendrerit.
                         </p>
-                        <Button variant="outline-secondary">Discover</Button>
+                        <Link to="/products"><Button variant="outline-secondary">Discover</Button></Link>
                         </div>
                     </div>
                     <div className="col-md-6 sec2">

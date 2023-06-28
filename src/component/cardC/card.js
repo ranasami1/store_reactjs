@@ -1,41 +1,37 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import "./card.css";
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Counter from '../counter/counter';
-const ask =()=>{
-  Swal.fire({
-    title:"add to cart or continue shoping?",
-    confirmButtonText:"Add to cart",
-    showCancelButton:true,
-    cancelButtonText:"Continue"
-  }).then((data)=>{
-    if(data.isConfirmed){
-     return(
-      <Counter />
-       
-     )
-    }
-  })
- 
-}
 
-function PCard(props) {
-  console.log(props);
+function PCard({card,addtocart}) {
+  const {image,title,description,price} = card;
+  const ask =()=>{
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Added to cart',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  const actions = ()=>{
+    ask();
+    addtocart(card);
+  }
   return (
     <Card style={{ maxWidth: '14rem'}} className='card'>
-      <Card.Img style={{ height: '12rem'}} variant="top" src={props.card.image} />
+      <Card.Img style={{ height: '12rem'}} variant="top" src={image} />
       <Card.Body>
-        <Card.Title>{props.card.title.slice(0,15)}...</Card.Title>
+        <Card.Title>{title.slice(0,15)}...</Card.Title>
         <Card.Text>
-         {props.card.description.slice(0,20)}...
+         {description.slice(0,20)}...
          <br/>
-         {props.card.price}<span>$</span>
+         {price}<span>$</span>
         </Card.Text>
-        <Link onClick={()=>ask()}><Button variant="outline-secondary">Add to cart</Button></Link>
+        <Button onClick={()=> actions()} variant="outline-secondary" type="submit">Add to cart</Button>
       </Card.Body>
     </Card>
+    
   );
 }
 

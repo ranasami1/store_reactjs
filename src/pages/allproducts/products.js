@@ -6,7 +6,8 @@ import { Button } from "react-bootstrap";
 const Allproducts = () =>{
     const  [value,setValue] = useState([]);
     const  [cat,setCat] = useState([]);
-    const url ="https://fakestoreapi.com/products"
+    const [cart,setCart] = useState([]);
+    const url ='https://fakestoreapi.com/products';
 
     const getall = () => {
     fetch(url)
@@ -24,13 +25,20 @@ const Allproducts = () =>{
     console.log(catName);
     fetch(`${url}/category/${catName}`)
             .then((res)=>res.json())
+
             .then((data)=>setValue(data));
    };
+   const addtocart = (card) =>{
+    cart.push(card);
+    localStorage.setItem("card",JSON.stringify(cart));
+    console.log(localStorage)
+    
+   }
    useEffect(() =>{
     getall();
     getcat();
    },[])
-
+ 
     return(
     <div className="container prod">
         <div className="row">
@@ -48,8 +56,8 @@ const Allproducts = () =>{
         
                     {value.map((card) =>{
                         return(
-                            <div className="col-3" key={value.id}>
-                                <PCard card={card}/>
+                            <div className="col-3" key={card.id}>
+                                <PCard card={card} addtocart={addtocart}  />
                             </div>
                         );
                     })}  

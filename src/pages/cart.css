@@ -1,0 +1,34 @@
+section{
+    margin-top: 70px;
+}
+table{
+    margin: auto;
+}
+table thead td,tbody td{
+    display: grid;
+    grid-template-columns: 50px 400px 100px;
+    margin: 10px 0;
+    border-bottom: 1px #aaa solid;
+    
+}
+.total{
+    width: 30%;
+    margin: 10px auto;
+    border: 1px #aaa solid;
+    height: auto;
+
+}
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.options button{
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 30px;
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+}
