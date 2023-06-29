@@ -25,14 +25,11 @@ const Allproducts = () =>{
     console.log(catName);
     fetch(`${url}/category/${catName}`)
             .then((res)=>res.json())
-
             .then((data)=>setValue(data));
    };
    const addtocart = (card) =>{
     cart.push(card);
     localStorage.setItem("card",JSON.stringify(cart));
-    console.log(localStorage)
-    
    }
    useEffect(() =>{
     getall();

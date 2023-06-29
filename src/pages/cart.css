@@ -6,7 +6,7 @@ table{
 }
 table thead td,tbody td{
     display: grid;
-    grid-template-columns: 50px 400px 100px;
+    grid-template-columns: 50px 250px 150px 150px;
     margin: 10px 0;
     border-bottom: 1px #aaa solid;
     
@@ -23,7 +23,7 @@ table thead td,tbody td{
     align-items: center;
     justify-content: space-around;
 }
-.options button{
+#C{
     border: none;
     background-color: var(--main-color);
     color: white;
