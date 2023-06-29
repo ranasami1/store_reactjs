@@ -1,10 +1,17 @@
-import React, { useState } from "react";
 import "./cart.css";
-
 const CartPage = () => {
+  const remove = () =>{
+    localStorage.clear();
+  }
+  
   let retrieveData = 
   JSON.parse(localStorage.getItem("card"));
   console.log(retrieveData);
+  const totalprice = () =>{
+    let total = 0;
+    retrieveData.map((item) =>(total=total + item.price))
+    return total;
+  };
   
     return(
       <section className="cart">
@@ -18,7 +25,7 @@ const CartPage = () => {
             <tr> </tr>
           </td>
           </thead>
-          <tbody>
+          <tbody >
               {retrieveData.map((data)=>{
                 return(
                   <td>
@@ -30,17 +37,15 @@ const CartPage = () => {
             </td>
                 )
               })}
-              
-             
           </tbody>
         </table>
         <div className="total">
           <h4 className="text-center border-bottom bg-light">total</h4>
           <div className="container">
-            <p className="text-center"> $</p>
+            <p className="text-center">{totalprice()}$</p>
             <div className="options">
             <button id="C">Buy now</button>
-            <button id="C" onClick={()=>localStorage.clear()}>Clear Cart</button>
+            <button id="C" onClick={()=>remove()}>Clear Cart</button>
             </div>
             
           </div>

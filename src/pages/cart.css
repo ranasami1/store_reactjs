@@ -16,7 +16,6 @@ table thead td,tbody td{
     margin: 10px auto;
     border: 1px #aaa solid;
     height: auto;
-
 }
 .options{
     display: flex;
