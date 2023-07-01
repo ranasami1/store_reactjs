@@ -1,12 +1,12 @@
 section{
-    margin-top: 70px;
+    margin-top: 50px;
 }
 table{
     margin: auto;
 }
 table thead td,tbody td{
     display: grid;
-    grid-template-columns: 50px 250px 150px 150px;
+    grid-template-columns: 20px 250px auto auto;
     margin: 10px 0;
     border-bottom: 1px #aaa solid;
     
@@ -15,7 +15,8 @@ table thead td,tbody td{
     width: 30%;
     margin: 10px auto;
     border: 1px #aaa solid;
-    height: auto;
+    height: 150px;
+
 }
 .options{
     display: flex;

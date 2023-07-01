@@ -15,7 +15,8 @@ const CartPage = () => {
   
     return(
       <section className="cart">
-        <h1 className="text-center">Cart</h1>
+        <h1 className="text-center">Cart</h1> 
+        <div>
         <table>
           <thead>
           <td>
@@ -39,6 +40,7 @@ const CartPage = () => {
               })}
           </tbody>
         </table>
+        </div>
         <div className="total">
           <h4 className="text-center border-bottom bg-light">total</h4>
           <div className="container">

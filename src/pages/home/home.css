@@ -3,7 +3,7 @@
     height: auto;
 }
 .head .container .row{
-    max-height: 500px;
+    max-height: auto;
     display: flex;
     justify-content: space-between;
 }
