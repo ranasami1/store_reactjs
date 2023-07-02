@@ -1,14 +1,12 @@
 import "./cart.css";
-const CartPage = () => {
+const CartPage = ({retrieveData,addtocart}) => {
  
-  let retrieveData = 
-  JSON.parse(localStorage.getItem("card"));
-  console.log(retrieveData);
   const totalprice = () =>{
     let total = 0;
     retrieveData.map((item) =>(total=total + item.price))
     return total;
   };
+  
   
     return(
       <section className="cart">
@@ -31,7 +29,7 @@ const CartPage = () => {
                   <tr className="text-center"><img src={data.image} style={{width:40}}/>
                   <h6>{data.title}</h6></tr>
                   <tr className="text-center">{data.price} $</tr>
-                  <tr className="text-center"><button id="C" >Delete</button></tr>
+                  <tr className="text-center" ><button id="C" >Delete</button></tr>
                   </td>
                 )
               }) : <td>

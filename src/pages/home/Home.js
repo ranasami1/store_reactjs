@@ -4,12 +4,7 @@ import "./home.css"
 import { Button} from "react-bootstrap";
 import PCard from "../../component/cardC/card";
 import { Link } from "react-router-dom";
-const Head = ()=>{
-    const [cart, setCart] = useState([]);
-    const addtocart = (card) =>{
-        cart.push(card);
-        localStorage.setItem("card",JSON.stringify(cart));
-       }
+const Head = ({addtocart})=>{
     const  [value,setValue] = useState([]);
     const url ="https://fakestoreapi.com/products?limit=4"
     useEffect(() =>{
