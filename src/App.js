@@ -22,7 +22,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Head addtocart={addtocart}/>}></Route>
-        <Route path='/products' element={<Allproducts/>}></Route>
+        <Route path='/products' element={<Allproducts addtocart={addtocart}/>}></Route>
         <Route path='/cart' element={<CartPage retrieveData={retrieveData} addtocart={addtocart}/>}></Route>
 
       </Routes>

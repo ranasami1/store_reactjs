@@ -3,10 +3,9 @@ import PCard from "../../component/cardC/card";
 import { useEffect,useState } from "react";
 import "./products.css"
 import { Button } from "react-bootstrap";
-const Allproducts = () =>{
+const Allproducts = ({addtocart}) =>{
     const  [value,setValue] = useState([]);
     const  [cat,setCat] = useState([]);
-    const [cart,setCart] = useState([]);
     const url ='https://fakestoreapi.com/products';
 
     const getall = () => {
@@ -27,10 +26,6 @@ const Allproducts = () =>{
             .then((res)=>res.json())
             .then((data)=>setValue(data));
    };
-   const addtocart = (card) =>{
-    cart.push(card);
-    localStorage.setItem("card",JSON.stringify(cart));
-   }
    useEffect(() =>{
     getall();
     getcat();
@@ -53,8 +48,8 @@ const Allproducts = () =>{
         
                     {value.map((card) =>{
                         return(
-                            <div className="col-3" key={card.id}>
-                                <PCard card={card} addtocart={addtocart}  />
+                            <div className="col-3" >
+                                <PCard card={card} addtocart={addtocart} key={value.id} />
                             </div>
                         );
                     })}  
