@@ -1,9 +1,6 @@
 import "./cart.css";
 const CartPage = () => {
-  const remove = () =>{
-    localStorage.clear();
-  }
-  
+ 
   let retrieveData = 
   JSON.parse(localStorage.getItem("card"));
   console.log(retrieveData);
@@ -27,17 +24,22 @@ const CartPage = () => {
           </td>
           </thead>
           <tbody >
-              {retrieveData.map((data)=>{
+              {retrieveData !== [ ] ? retrieveData.map((data)=>{
                 return(
                   <td>
                   <tr className="text-center">{data.id}</tr>
                   <tr className="text-center"><img src={data.image} style={{width:40}}/>
                   <h6>{data.title}</h6></tr>
                   <tr className="text-center">{data.price} $</tr>
-                  <tr className="text-center"><button id="C">Delete</button></tr>
-            </td>
+                  <tr className="text-center"><button id="C" >Delete</button></tr>
+                  </td>
                 )
-              })}
+              }) : <td>
+                <tr> 0</tr>
+                <tr> 0</tr>
+                <tr> 0</tr>
+                <tr>  </tr>
+                </td>}
           </tbody>
         </table>
         </div>
@@ -47,7 +49,6 @@ const CartPage = () => {
             <p className="text-center">{totalprice()}$</p>
             <div className="options">
             <button id="C">Buy now</button>
-            <button id="C" onClick={()=>remove()}>Clear Cart</button>
             </div>
             
           </div>

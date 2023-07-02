@@ -1,12 +1,9 @@
-import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "./header.css"
 import logo from "./../../img/pngwing.com (1).png";
 import { Link } from "react-router-dom";
-
-
 
 const Header=()=>{
     return(
@@ -18,7 +15,7 @@ const Header=()=>{
           <Nav className="ms-auto">
             <Link className="link" to="/" href="#home">Home</Link>
             <Link className="link" to="/products" href="#link">products</Link>
-            <Link className="link" to="/cart" href="#link">Cart</Link>
+            <Link className="link" to="/cart" href="#link">Cart <span className="number">0</span></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
