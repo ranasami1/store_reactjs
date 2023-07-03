@@ -22,7 +22,7 @@ const CartPage = ({retrieveData,addtocart}) => {
           </td>
           </thead>
           <tbody >
-              {retrieveData !== [ ] ? retrieveData.map((data)=>{
+              {retrieveData.map((data)=>{
                 return(
                   <td>
                   <tr className="text-center">{data.id}</tr>
@@ -30,14 +30,7 @@ const CartPage = ({retrieveData,addtocart}) => {
                   <h6>{data.title}</h6></tr>
                   <tr className="text-center">{data.price} $</tr>
                   <tr className="text-center" ><button id="C" >Delete</button></tr>
-                  </td>
-                )
-              }) : <td>
-                <tr> 0</tr>
-                <tr> 0</tr>
-                <tr> 0</tr>
-                <tr>  </tr>
-                </td>}
+                  </td>)})}  
           </tbody>
         </table>
         </div>

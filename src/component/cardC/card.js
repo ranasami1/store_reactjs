@@ -18,6 +18,7 @@ function PCard({card,addtocart}) {
     ask();
     addtocart(card);
   }
+  
   return (
     <Card style={{ maxWidth: '14rem'}} className='card'>
       <Card.Img style={{ height: '12rem'}} variant="top" src={image} />

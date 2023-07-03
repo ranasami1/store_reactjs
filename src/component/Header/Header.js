@@ -5,10 +5,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import "./header.css"
 import logo from "./../../img/pngwing.com (1).png";
 import { Link } from "react-router-dom";
+import bag from "./../../img/big-handbag.png";
 
 
 
-const Header=()=>{
+const Header=({retrieveData,count})=>{
+ 
     return(
         <Navbar fixed="top" expand="lg" className="bg-body-tertiary shadow">
       <Container>
@@ -18,7 +20,7 @@ const Header=()=>{
           <Nav className="ms-auto">
             <Link className="link" to="/" href="#home">Home</Link>
             <Link className="link" to="/products" href="#link">products</Link>
-            <Link className="link" to="/cart" href="#link">Cart <span className="number">0</span></Link>
+            <Link className="link" to="/cart" href="#link"><img src={bag}/><span className="number">{count}</span></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
