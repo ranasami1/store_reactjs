@@ -4,7 +4,7 @@ import "./home.css"
 import { Button} from "react-bootstrap";
 import PCard from "../../component/cardC/card";
 import { Link } from "react-router-dom";
-const Head = ({addtocart})=>{
+const Head = ({addtocart,counter,count})=>{
     const  [value,setValue] = useState([]);
     const url ="https://fakestoreapi.com/products?limit=4"
     useEffect(() =>{
@@ -35,7 +35,7 @@ const Head = ({addtocart})=>{
                     {value.map((card) =>{
                         return(
                             <div className="col-3">
-                                <PCard card={card} addtocart={addtocart}/>
+                                <PCard card={card} addtocart={addtocart} count={count} counter={counter}/>
                             </div>
                         );
                     })}  

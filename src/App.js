@@ -37,7 +37,7 @@ function App() {
     <Fragment>
       <Header retrieveData={retrieveData} count={count} counter={counter}/>
       <Routes>
-        <Route path='/' element={<Head addtocart={addtocart}/>}></Route>
+        <Route path='/' element={<Head addtocart={addtocart} counter={counter} count={count}/>}></Route>
         <Route path='/products' element={<Allproducts addtocart={addtocart} counter={counter}/>}></Route>
         <Route path='/cart' element={<CartPage retrieveData={retrieveData} addtocart={addtocart}/>}></Route>
 
