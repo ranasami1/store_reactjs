@@ -12,7 +12,7 @@ import bag from "./../../img/big-handbag.png";
 const Header=({retrieveData,count})=>{
  
     return(
-        <Navbar fixed="top" expand="lg" className="bg-body-tertiary shadow">
+        <Navbar fixed="top" className="bg-body-tertiary shadow">
       <Container>
         <Link className="link" to="/"><img src={logo} style={{width:32}}/></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

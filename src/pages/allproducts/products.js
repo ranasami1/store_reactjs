@@ -3,7 +3,7 @@ import PCard from "../../component/cardC/card";
 import { useEffect,useState } from "react";
 import "./products.css"
 import { Button } from "react-bootstrap";
-const Allproducts = ({addtocart}) =>{
+const Allproducts = ({addtocart,counter}) =>{
     const  [value,setValue] = useState([]);
     const  [cat,setCat] = useState([]);
     const url ='https://fakestoreapi.com/products';
@@ -49,7 +49,7 @@ const Allproducts = ({addtocart}) =>{
                     {value.map((card) =>{
                         return(
                             <div className="col-3" >
-                                <PCard card={card} addtocart={addtocart} key={value.id} />
+                                <PCard card={card} addtocart={addtocart} key={value.id} counter={counter}/>
                             </div>
                         );
                     })}  

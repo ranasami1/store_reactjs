@@ -10,6 +10,7 @@ import { useState } from 'react';
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [count , setCount] = useState(-1);
     const addtocart = (card) =>{
         cart.push(card);
         localStorage.setItem("card",JSON.stringify(cart));
@@ -17,16 +18,27 @@ function App() {
   let retrieveData = 
   JSON.parse(localStorage.getItem("card"));
 
-  let count = 0;
-  for(let i=0; i<retrieveData.length;i++)
-     count++;
+  const counter=()=>{
+    if(retrieveData.length !==-1){
+      for(let i=0; i<retrieveData.length;i++){
+         setCount(count + 1);
+      } 
+    }
+    else{
+      setCount(0);
+    }
+  }
+  useEffect(()=>{
+    counter();
+  },[])
+ 
 
   return(
     <Fragment>
-      <Header retrieveData={retrieveData} count={count}/>
+      <Header retrieveData={retrieveData} count={count} counter={counter}/>
       <Routes>
         <Route path='/' element={<Head addtocart={addtocart}/>}></Route>
-        <Route path='/products' element={<Allproducts addtocart={addtocart}/>}></Route>
+        <Route path='/products' element={<Allproducts addtocart={addtocart} counter={counter}/>}></Route>
         <Route path='/cart' element={<CartPage retrieveData={retrieveData} addtocart={addtocart}/>}></Route>
 
       </Routes>
