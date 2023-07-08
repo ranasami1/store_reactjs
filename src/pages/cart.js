@@ -1,12 +1,11 @@
 import "./cart.css";
-const CartPage = ({retrieveData,addtocart}) => {
+const CartPage = ({retrieveData}) => {
  
   const totalprice = () =>{
     let total = 0;
     retrieveData.map((item) =>(total=total + item.price))
     return total;
   };
-  
   
     return(
       <section className="cart">

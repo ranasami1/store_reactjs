@@ -10,16 +10,17 @@ import { useState } from 'react';
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [count , setCount] = useState(-1);
-    const addtocart = (card) =>{
+  const [count , setCount] = useState(0);
+    function addtocart(card,counter){
         cart.push(card);
         localStorage.setItem("card",JSON.stringify(cart));
+        counter();
        }
   let retrieveData = 
   JSON.parse(localStorage.getItem("card"));
 
-  const counter=()=>{
-    if(retrieveData.length !==-1){
+  function counter(){
+    if(retrieveData.length !==0){
       for(let i=0; i<retrieveData.length;i++){
          setCount(count + 1);
       } 
@@ -28,10 +29,6 @@ function App() {
       setCount(0);
     }
   }
-  useEffect(()=>{
-    counter();
-  },[])
- 
 
   return(
     <Fragment>

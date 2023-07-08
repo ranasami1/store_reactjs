@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import "./card.css";
 import Swal from 'sweetalert2';
 
-function PCard({card,addtocart , counter}) {
+function PCard({card,addtocart, counter}) {
   const {image,title,description,price} = card;
   const ask =()=>{
     Swal.fire({
@@ -16,7 +16,7 @@ function PCard({card,addtocart , counter}) {
   }
   const actions = ()=>{
     ask();
-    addtocart(card);
+    addtocart(card,counter);
     counter();
     
   }
