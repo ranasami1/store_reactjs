@@ -1,9 +1,9 @@
 import "./cart.css";
-const CartPage = ({retrieveData}) => {
+const CartPage = ({cart,deletItem}) => {
  
   const totalprice = () =>{
     let total = 0;
-    retrieveData.map((item) =>(total=total + item.price))
+    cart.map((item) =>(total=total + item.price))
     return total;
   };
   
@@ -21,14 +21,14 @@ const CartPage = ({retrieveData}) => {
           </td>
           </thead>
           <tbody >
-              {retrieveData.map((data)=>{
+              {cart.map((data)=>{
                 return(
                   <td>
                   <tr className="text-center">{data.id}</tr>
                   <tr className="text-center"><img src={data.image} style={{width:40}}/>
                   <h6>{data.title}</h6></tr>
                   <tr className="text-center">{data.price} $</tr>
-                  <tr className="text-center" ><button id="C" >Delete</button></tr>
+                  <tr className="text-center" ><button onClick={()=>deletItem(data.id)}id="C" >Delete</button></tr>
                   </td>)})}  
           </tbody>
         </table>

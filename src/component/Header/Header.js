@@ -9,7 +9,7 @@ import bag from "./../../img/big-handbag.png";
 
 
 
-const Header=({retrieveData,count})=>{
+const Header=({cart,count})=>{
  
     return(
         <Navbar fixed="top" className="bg-body-tertiary shadow">
