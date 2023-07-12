@@ -20,6 +20,7 @@ const Header=({cart,count})=>{
           <Nav className="ms-auto">
             <Link className="link" to="/" href="#home">Home</Link>
             <Link className="link" to="/products" href="#link">products</Link>
+            <Link className="link" to ="/login">login</Link>
             <Link className="link" to="/cart" href="#link"><img src={bag}/><span className="number">{count}</span></Link>
           </Nav>
         </Navbar.Collapse>
