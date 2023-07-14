@@ -23,7 +23,7 @@ async function signup()
         })
         result =await result.json();
         localStorage.setItem("userInfo",JSON.stringify(result));
-        
+        navigate("/")
         }
       return(
             <section>
@@ -53,13 +53,13 @@ async function signup()
                         </div>
 
                         <div class="form-check d-flex justify-content-center mb-5">
-                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                        <input required class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
                         <label class="form-check-label" for="form2Example3g">
                             I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
                         </label>
                         </div>
                         <div class="d-flex justify-content-center">
-                        <button onClick={signup()}
+                        <button onClick={()=>signup()}
                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                         </div>
                         <p class="text-center text-muted mt-3 mb-0">Have already an account? <Link to="/login" href="#!"
