@@ -29,9 +29,10 @@ const Login = ()=>{
         <Link className="link" href="#!">Forgot password?</Link>
         </div>
     </div>
-    <button type="button" class="btn btn-success btn-block text-body" style={{width:400,backgroundColor:"#E6A900"}}>Sign in</button>
+    <button type="button" class="btn btn-success btn-block text-body" style={{width:400,backgroundColor:"#E6A900"}}><Link to="/">Sign in
+    </Link></button>
     <div class="text-center">
-        <p>Not a member? <Link to ="/signup" className="link" href="#!">Register</Link></p>
+        <p>Not a member? <Link className="link" to ="/signup" className="link" href="#!">Register</Link></p>
     </div>
     </form>
     <img src="https://img.freepik.com/free-vector/sticker-template-clothes-racks-with-many-clothes-hangers-white-background_1308-61192.jpg?w=2000"/>

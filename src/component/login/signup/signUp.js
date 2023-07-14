@@ -1,37 +1,55 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import"./signup.css";
 const SignUp = ()=>{
-    return(
+    const [name,setName] = useState("");
+    const [user,setUser] = useState("");
+    const [pwd,setPwd]= useState("");
+    const navigate = useNavigate("");
+    
+async function signup()
+{       
+        let userInfo = {name,user,pwd};
+        console.log(userInfo);
+        let result= await fetch("http://localhost:5500/user",{
+            method:'POST',
+            body:JSON.stringify(userInfo),
+            headers:{
+                "Content-Type":'application/json',
+                "Accept":'application/json'
+            }
+        })
+        result =await result.json();
+        localStorage.setItem("userInfo",JSON.stringify(result));
+        
+        }
+      return(
             <section>
         <div>
             <div class="container">
             <div class="row">
                 <div class="col-5 main">
                 <div class="card">
-                    <div class="card-body p-5">
+                    <div class="card-body p-3">
                     <h2 class="text-uppercase text-center mb-3"style={{color:"#E6A900"}}>Create an account</h2>
 
                     <form>
 
                         <div class="form-outline mb-3">
-                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                        <input onChange={(e)=>setName(e.target.value)} type="text" value={name} class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example1cg">Your Name</label>
                         </div>
 
                         <div class="form-outline mb-3">
-                        <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                        <input onChange={(e)=>setUser(e.target.value)} type="email" value={user} class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example3cg">Your Email</label>
                         </div>
 
                         <div class="form-outline mb-3">
-                        <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                        <input onChange={(e)=>setPwd(e.target.value)} type="password" value={pwd} class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example4cg">Password</label>
-                        </div>
-
-                        <div class="form-outline mb-3">
-                        <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                         </div>
 
                         <div class="form-check d-flex justify-content-center mb-5">
@@ -41,7 +59,7 @@ const SignUp = ()=>{
                         </label>
                         </div>
                         <div class="d-flex justify-content-center">
-                        <button type="button"
+                        <button onClick={signup()}
                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                         </div>
                         <p class="text-center text-muted mt-3 mb-0">Have already an account? <Link to="/login" href="#!"
