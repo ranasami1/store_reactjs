@@ -5,13 +5,13 @@ import {useNavigate} from "react-router-dom";
 import"./signup.css";
 const SignUp = ()=>{
     const [name,setName] = useState("");
-    const [user,setUser] = useState("");
+    const [email,setEmail] = useState("");
     const [pwd,setPwd]= useState("");
     const navigate = useNavigate("");
     
 async function signup()
 {       
-        let userInfo = {name,user,pwd};
+        let userInfo = {name,email,pwd};
         console.log(userInfo);
         let result= await fetch("http://localhost:5500/user",{
             method:'POST',
@@ -43,7 +43,7 @@ async function signup()
                         </div>
 
                         <div class="form-outline mb-3">
-                        <input onChange={(e)=>setUser(e.target.value)} type="email" value={user} class="form-control form-control-lg" />
+                        <input onChange={(e)=>setEmail(e.target.value)} type="email" value={email} class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example3cg">Your Email</label>
                         </div>
 
@@ -70,7 +70,7 @@ async function signup()
                     </div>
                 </div>
                 </div>
-                <img className="col-7" src="https://npr.brightspotcdn.com/dims4/default/ffb8c2e/2147483647/strip/true/crop/900x506+0+0/resize/1200x675!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F03%2F9c%2F3a2e47fc412a857e60875267fc30%2Fclothing-istock-vectorikart-2021-0730.jpg"/>
+                <img className="col-7" src="https://npr.brightspotcdn.com/dims4/default/ffb8c2e/2147483647/strip/true/crop/900x506+0+0/resize/1200x675!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F03%2F9c%2F3a2e47fc412a857e60875267fc30%2Fclothing-istock-vectorikart-2021-0730.jpg" alt=""/>
             </div>
             </div>
         </div>

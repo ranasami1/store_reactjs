@@ -1,20 +1,20 @@
 {
   "user": [
     {
-      "name": "ranasami",
-      "user": "rana@test.com",
+      "name": "rana sami",
+      "email": "rana@test.com",
       "pwd": "123123",
       "id": 1
     },
     {
       "email": "rana@test.com",
-      "pwd": "13123",
+      "pwd": "123123",
       "id": 2
     },
     {
-      "name": "",
-      "user": "",
-      "pwd": "",
+      "name": "ahmed",
+      "email": "Ahmed@Test.Com",
+      "pwd": "12313",
       "id": 3
     }
   ]
