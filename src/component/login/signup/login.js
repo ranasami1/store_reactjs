@@ -27,6 +27,7 @@ const Login = ()=>{
                     timer: 2000,
                   }) 
                   setTimeout(navigate("/"),1000)
+                  localStorage.setItem("user",email)
             }else{
                 Swal.fire({
                     icon: 'error',

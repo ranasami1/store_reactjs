@@ -4,13 +4,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "./header.css"
 import logo from "./../../img/pngwing.com (1).png";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import bag from "./../../img/big-handbag.png";
 
-
-
 const Header=({cart,count})=>{
- 
+  const navigate = useNavigate();
+    const logout= ()=>{
+      localStorage.removeItem("user");
+      setTimeout(navigate("/login"),1000);
+      
+    }
+   
     return(
         <Navbar fixed="top" className="bg-body-tertiary shadow">
       <Container>
@@ -20,7 +24,10 @@ const Header=({cart,count})=>{
           <Nav className="ms-auto">
             <Link className="link" to="/" href="#home">Home</Link>
             <Link className="link" to="/products" href="#link">products</Link>
-            <Link className="link" to ="/login">login</Link>
+            {localStorage.getItem("user")!==null? <Link className="link" onClick={()=>logout()}>LogOut</Link>
+            :
+           <Link className="link" to ="/login">login</Link>}
+            
             <Link className="link" to="/cart" href="#link"><img src={bag}/><span className="number">{count}</span></Link>
           </Nav>
         </Navbar.Collapse>
