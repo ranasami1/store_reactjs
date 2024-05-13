@@ -34,7 +34,7 @@ const Head = ({addtocart,counter,count})=>{
                 <div className="content">
                     {value.map((card) =>{
                         return(
-                            <div className="card m-5">
+                            <div className="m-4">
                                 <PCard card={card} addtocart={addtocart} count={count} counter={counter}/>
                             </div>
                         );
