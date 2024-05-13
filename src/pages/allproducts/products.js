@@ -32,8 +32,7 @@ const Allproducts = ({addtocart,counter}) =>{
    },[])
  
     return(
-    <div className="container prod">
-        <div className="row">
+    <div className="container mt-5">
         <h1 className="text-center">Our Products</h1>
         <div className="filter">
             <p>Filter-_</p>
@@ -45,16 +44,16 @@ const Allproducts = ({addtocart,counter}) =>{
                 )
             })}
         </div>
-        
-                    {value.map((card) =>{
+        <div className="item d-flex flex-wrap align-items-center justify-content-center">       
+        {value.map((card) =>{
                         return(
-                            <div className="col-3" >
+                            <div className="m-3">
                                 <PCard card={card} addtocart={addtocart} key={value.id} counter={counter}/>
                             </div>
                         );
                     })}  
+        </div>       
         </div>
-    </div>
     );
 }
 export default Allproducts
