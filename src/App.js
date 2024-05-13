@@ -7,8 +7,7 @@ import CartPage from './pages/cart';
 import Header from './component/Header/Header';
 import Footer from './component/footer/footer';
 import { useState } from 'react';
-import Login from './component/login/signup/login';
-import SignUp from './component/login/signup/signUp';
+
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -45,9 +44,6 @@ function App() {
         <Route path='/' element={<Head addtocart={addtocart} counter={counter} count={count}/>}></Route>
         <Route path='/products' element={<Allproducts addtocart={addtocart} counter={counter}/>}></Route>
         <Route path='/cart' element={<CartPage cart={cart}  deletItem={deletItem}/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/signup' element={<SignUp/>}></Route>
-
       </Routes>
       <Footer/>
    </Fragment>
