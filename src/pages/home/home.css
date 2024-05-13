@@ -38,14 +38,14 @@
 }
 .head2{
     height: auto;
-}
-.head2 .row{
-    width: 90%;
-    margin: 10px auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
 }
-.head2 .row h1{
-    padding: 10px;
+.head2 .content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }

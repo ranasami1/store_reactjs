@@ -30,11 +30,11 @@ const Head = ({addtocart,counter,count})=>{
                 </div>
             </div>
             <div className="head2">
-                <div className="row">
-                    <h1 className="text-center">Best Selling</h1>
+            <h1 className="text-center">Best Selling</h1>
+                <div className="content">
                     {value.map((card) =>{
                         return(
-                            <div className="col-3">
+                            <div className="card m-5">
                                 <PCard card={card} addtocart={addtocart} count={count} counter={counter}/>
                             </div>
                         );
