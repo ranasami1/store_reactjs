@@ -1,6 +1,6 @@
 footer{
     background-color: var(--main-color);
-    position: absolute;
+    position: relative;
     padding: 20px;
     color: #fff;
     bottom: 0;
