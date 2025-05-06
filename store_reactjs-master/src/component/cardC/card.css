@@ -1,0 +1,11 @@
+span{
+    color: var(--main-color);
+}
+.card{
+    transition: ease .3s;
+    margin: 5px 0;
+}
+.card:hover{
+    transform: scale(.9);
+
+}

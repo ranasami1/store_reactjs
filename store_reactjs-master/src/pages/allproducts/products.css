@@ -1,0 +1,16 @@
+
+.filter{
+    padding: 10px;
+}
+#filterb{
+    margin: 0 3px;
+}
+#filterb:focus{
+    background-color:var(--main-color) ;
+}
+.filter p{
+    display: inline;
+    margin-right: 5px;
+    font-weight: 700;
+    color: var(--main-color);
+}

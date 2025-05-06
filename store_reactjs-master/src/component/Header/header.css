@@ -1,0 +1,14 @@
+.link{
+    text-decoration: none;
+    margin: 0 0 0 10px;
+    color: #E6A900 !important;
+}
+.number{
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    border-radius: 40px;
+    position: relative;
+    margin: 0px 0px 0px -5px;
+    font-size: 16px;
+}
