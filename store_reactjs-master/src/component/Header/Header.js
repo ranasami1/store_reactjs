@@ -8,6 +8,7 @@ import { Link} from "react-router-dom";
 import bag from "./../../img/big-handbag.png";
 import { AppContext } from "../../App";
 const Header=()=>{  
+  const{count} =useContext(AppContext);
     return(
         <Navbar fixed="top" className="bg-body-tertiary shadow">
       <Container>
@@ -17,7 +18,7 @@ const Header=()=>{
           <Nav className="ms-auto">
             <Link className="link" to="/" href="#home">Home</Link>
             <Link className="link" to="/products" href="#link">products</Link>
-            <Link className="link" to="/cart" href="#link"><img src={bag}/><span className="number"></span></Link>
+            <Link className="link" to="/cart" href="#link"><img src={bag}/><span className="number">{count}</span></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

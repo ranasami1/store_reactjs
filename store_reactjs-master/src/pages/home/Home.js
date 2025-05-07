@@ -8,7 +8,7 @@ import { AppContext } from "../../App";
 import { Card } from "react-bootstrap";
 
 const Head = ()=>{  
-    const  {value}=useContext(AppContext)
+    const  {value,addToCart}=useContext(AppContext)
     return(
         <section className="head">
             <div className="container">
@@ -46,7 +46,7 @@ const Head = ()=>{
                     {item.price}
                     <span>$</span>
                   </Card.Text>
-                  <Button variant="outline-secondary" type="submit">
+                  <Button variant="outline-secondary" type="submit" onClick={()=>addToCart(item.id)}>
                     Add to cart
                   </Button>
                 </Card.Body>

@@ -1,7 +1,7 @@
 import "./App.css";
 import Allproducts from "./pages/allproducts/products";
 import Head from "./pages/home/Home";
-import { createContext, Fragment } from "react";
+import { createContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./component/Header/Header";
 import Footer from "./component/footer/footer";
@@ -12,6 +12,7 @@ export const AppContext = createContext();
 function App() {
   const [value, setValue] = useState([]);
   const [cat, setCat] = useState([]);
+  const [count , setCount] = useState(0);
   const url = "https://fakestoreapi.com/products";
 
   const getall = () => {
@@ -32,6 +33,10 @@ function App() {
       .then((res) => res.json())
       .then((data) => setValue(data));
   };
+  const addToCart = (id) =>{
+    setCount(count+1)
+    console.log(count);
+  }
   useEffect(() => {
     getall();
     getcat();
@@ -42,7 +47,9 @@ function App() {
         value={{
           cat,
           value,
+          count,
           filter,
+          addToCart,
         }}
       >
         <Header />

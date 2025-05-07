@@ -6,7 +6,7 @@ import { AppContext } from "../../App";
 import { Card } from "react-bootstrap";
 
 const Allproducts = () => {
-  const { cat, filter, value } = useContext(AppContext);
+  const { cat, filter, value,addToCart } = useContext(AppContext);
   return (
     <div className="container mt-5">
       <h1 className="text-center">Our Products</h1>
@@ -31,7 +31,7 @@ const Allproducts = () => {
         {value ? (
           value.map((card) => {
             return (
-              <Card style={{ width: "14rem", margin: "10px" }} className="card">
+              <Card style={{ width: "14rem", margin: "10px" }} className="card" key={card.id}>
                 <Card.Img
                   style={{ height: "12rem" }}
                   variant="top"
@@ -45,7 +45,7 @@ const Allproducts = () => {
                     {card.price}
                     <span>$</span>
                   </Card.Text>
-                  <Button variant="outline-secondary" type="submit">
+                  <Button variant="outline-secondary" type="submit" onClick={()=>addToCart(card.id)}>
                     Add to cart
                   </Button>
                 </Card.Body>
