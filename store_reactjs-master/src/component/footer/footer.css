@@ -1,11 +1,9 @@
 footer{
     background-color: var(--main-color);
-    position: relative;
-    padding: 20px;
     color: #fff;
-    bottom: 0;
 }
 footer a{
     text-decoration: none;
-    color: #333 ;
+    color: #fff;
 }
+

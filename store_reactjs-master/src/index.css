@@ -4,7 +4,7 @@
     text-transform: capitalize;
 }
 :root{
-    --main-color:#E6A900;
+    --main-color:#76BFA5;
 }
 h1::first-letter{
     font-weight: 700;

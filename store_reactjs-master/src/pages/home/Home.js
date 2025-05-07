@@ -1,5 +1,5 @@
 import React, { useContext} from "react";
-import ph from './../../img/20419.jpg';
+import ph from './../../img/20419-removebg-preview.png';
 import "./home.css"
 import { Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -10,10 +10,9 @@ import { Card } from "react-bootstrap";
 const Head = ()=>{  
     const  {value,addToCart}=useContext(AppContext)
     return(
-        <section className="head">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
+        <section className="head container my-5">
+            <div className="d-flex align-items-center justify-content-between flex-wrap">
+            <div>
                         <div className="sec1">
                         <h2>welcome to our store</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a congue dui. Maecenas scelerisque porttitor sollicitudin. Vestibulum euismod eros vel lorem iaculis laoreet. Duis venenatis tincidunt sapien quis malesuada. Morbi vitae facilisis nisl. Ut ornare finibus quam, ac rutrum neque. Donec pharetra porttitor sollicitudin. Aliquam erat volutpat. Vestibulum vehicula vehicula odio in hendrerit.
@@ -21,18 +20,18 @@ const Head = ()=>{
                         <Link to="/products"><Button variant="outline-secondary">Discover</Button></Link>
                         </div>
                     </div>
-                    <div className="col-md-6 sec2">
+                    <div className="img">
                         <img src={ph} alt="sale"/>
                     </div>
-                </div>
             </div>
+                    
             <div className="head2">
             <h1 className="text-center">Best Selling</h1>
-                <div className="content">
-                    {value?value.slice(1,5).map((item) =>{
+                <div className="container d-flex flex-wrap align-items-center justify-content-center mt-5 mb-5">
+                    {value?value.slice(1,6).map((item) =>{
                         return(
-                            <div className="m-4">
-                                <Card style={{ width: "14rem", margin: "10px" }} className="card">
+                            <div>
+                                <Card style={{ width: "220px",margin :"10px"}} className="card">
                 <Card.Img
                   style={{ height: "12rem" }}
                   variant="top"

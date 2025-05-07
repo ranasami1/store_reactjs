@@ -31,7 +31,7 @@ const Allproducts = () => {
         {value ? (
           value.map((card) => {
             return (
-              <Card style={{ width: "14rem", margin: "10px" }} className="card" key={card.id}>
+              <Card style={{ width: "280px", margin: "10px" }} className="card" key={card.id}>
                 <Card.Img
                   style={{ height: "12rem" }}
                   variant="top"

@@ -1,7 +1,7 @@
 .link{
     text-decoration: none;
     margin: 0 0 0 10px;
-    color: #E6A900 !important;
+    color: var(--main-color) !important;
 }
 .number{
     background-color: red;

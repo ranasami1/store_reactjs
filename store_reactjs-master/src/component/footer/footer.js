@@ -3,9 +3,9 @@ import React from "react";
 import logo from "./../../img/pngwing.com (1).png"
 const Footer = ()=>{
     return(
-        <footer className="w-100">
-        <div>
-            <div className="d-flex align-items-center justify-content-around gap-5 flex-wrap">
+        <footer className="py-5">
+        <div className="container">
+            <div className="d-flex align-items-center justify-content-between flex-wrap">
                 <div>
                     <div className="footer-content">
                         <a href="#" className="logo" >
@@ -21,7 +21,7 @@ const Footer = ()=>{
                         <div className="footer-content-header">
                             <h5>Shop</h5>
                         </div>
-                        <ul>
+                        <ul className="list-unstyled">
                             <li>
                                 <a id="a" href="#">categories</a>
                             </li>
@@ -45,7 +45,7 @@ const Footer = ()=>{
                         <div className="footer-content-header">
                         <h5>Information</h5>
                         </div>
-                        <ul>
+                        <ul className="list-unstyled">
                             <li>
                                 <a id="a" href="#">categories</a>
                             </li>
@@ -69,7 +69,7 @@ const Footer = ()=>{
                         <div className="footer-content-header">
                         <h5>Policies</h5>
                         </div>
-                        <ul>
+                        <ul className="list-unstyled">
                             <li>
                                 <a id="a" href="#">categories</a>
                             </li>
