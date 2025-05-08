@@ -5,7 +5,7 @@ import { createContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./component/Header/Header";
 import Footer from "./component/footer/footer";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Cart from "./pages/CartPage/Cart";
 
 export const AppContext = createContext();
@@ -13,12 +13,16 @@ export const AppContext = createContext();
 function App() {
   const [value, setValue] = useState([]);
   const [cat, setCat] = useState([]);
+  const [loading, setLoading] = useState(true);
   const url = "https://fakestoreapi.com/products";
 
   const getall = () => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setValue(data));
+      .then((data) => {
+        setValue(data);
+        setLoading(false);
+      });
   };
 
   const getcat = () => {
@@ -109,6 +113,7 @@ function App() {
           updateCartDisplay,
           removeFromCart,
           cartItems,
+          loading,
         }}
       >
         <Header />
