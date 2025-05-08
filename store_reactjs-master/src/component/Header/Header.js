@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import bag from "./../../img/big-handbag.png";
 import { AppContext } from "../../App";
 const Header = () => {
-  const { count } = useContext(AppContext);
+  const { cartCount } = useContext(AppContext);
   return (
     <Navbar className="bg-body-tertiary shadow">
       <Container>
@@ -26,7 +26,7 @@ const Header = () => {
             </Link>
             <Link className="link" to="/cart" href="#link">
               <img src={bag} />
-              <span className="number">{count}</span>
+              <span className="number">{cartCount}</span>
             </Link>
           </Nav>
         </Navbar.Collapse>

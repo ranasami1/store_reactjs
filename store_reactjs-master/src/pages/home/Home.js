@@ -45,7 +45,7 @@ const Head = ()=>{
                     {item.price}
                     <span>$</span>
                   </Card.Text>
-                  <Button variant="outline-secondary" type="submit" onClick={()=>addToCart(item.id)}>
+                  <Button variant="outline-secondary" type="submit" onClick={()=>addToCart(item)}>
                     Add to cart
                   </Button>
                 </Card.Body>

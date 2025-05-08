@@ -28,7 +28,7 @@ const Allproducts = () => {
         })}
       </div>
       <div className="item d-flex flex-wrap align-items-center justify-content-center">
-        {value ? (
+        {value? (
           value.map((card) => {
             return (
               <Card style={{ width: "280px", margin: "10px" }} className="card" key={card.id}>
@@ -45,7 +45,7 @@ const Allproducts = () => {
                     {card.price}
                     <span>$</span>
                   </Card.Text>
-                  <Button variant="outline-secondary" type="submit" onClick={()=>addToCart(card.id)}>
+                  <Button variant="outline-secondary" type="submit" onClick={()=>addToCart(card)}>
                     Add to cart
                   </Button>
                 </Card.Body>
