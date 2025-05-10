@@ -42,11 +42,6 @@ function App() {
     const saved = localStorage.getItem("cart");
     return saved ? JSON.parse(saved) : {};
   });
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-  }, [cartItems]);
-
   const cartCount = Object.values(cartItems).reduce(
     (acc, item) => acc + item.quantity,
     0
@@ -96,11 +91,14 @@ function App() {
       return updatedCart;
     });
   }
-
   useEffect(() => {
     getall();
     getcat();
   }, []);
+  
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
   return (
     <div className="main-content">
       <AppContext.Provider

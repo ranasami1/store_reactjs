@@ -1,10 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../App";
 import "./cart.css";
 
 function Cart() {
-  const { cartItems, removeFromCart, clearCart } = useContext(AppContext);
+  const { cartItems, removeFromCart } = useContext(AppContext);
   const items = Object.entries(cartItems);
+  const [purches, setPurches] = useState(0);
+
+  useEffect(() => {
+    const total = Object.values(cartItems).reduce(
+      (sum, item) => sum + Number(item.totalPrice || 0),
+      0
+    );
+    setPurches(total);
+  }, [cartItems]);
 
   return (
     <div className="container-cart">
@@ -23,8 +32,8 @@ function Cart() {
                   <div className="cart-item-quantity">
                     Quantity: {data.quantity}
                   </div>
-                  <div className="cart-item-price">
-                    Total: ${data.totalPrice}
+                  <div className="cart-item-price fw-bold">
+                    Total: ${Number(data.totalPrice)* Number(data.quantity)}
                   </div>
                 </div>
                 <button
@@ -36,6 +45,9 @@ function Cart() {
               </li>
             ))}
           </ul>
+          <div>
+            <p className="fw-bold">Total: ${purches}</p>
+          </div>
         </>
       )}
     </div>
